@@ -10,6 +10,6 @@ router.post("/create", CreateProductController.create);
 router.get("/list", FindProductController.show)
 router.get("/list/:filter", FindProductController.filtered);
 router.put("/edit/:id", EditProductController.edit);
-// router.delete("/delete/:id", DeleteProductController.delete);
+router.delete("/delete/:id", DeleteProductController.delete);
 
 module.exports = router;
