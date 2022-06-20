@@ -24,7 +24,7 @@ module.exports = {
 
       let database = JSON.parse(data);
 
-      let has_this_product = []
+      let has_this_product = [];
 
       database.products.forEach(async product => {
         if (product.type == type && product.name == name) {
