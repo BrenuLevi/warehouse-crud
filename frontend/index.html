@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Sistema do almoxarifado</title>
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">GADO</a>
+        <div class="menu">
+          <ul>
+            <li><a href="#" class="link-tabs header-active" pointTo="warehouse-management">CONTROLE DE ALMOXARIFADO</a></li>
+            <li><a href="#" class="link-tabs" pointTo="change-history">HISTÓRICO DE ALTERAÇÕES</a></li>
+            <li><a href="#" class="link-tabs" pointTo="instructions">INSTRUÇÕES</a></li>
+          </ul>
+        </div>
+        <div class="invisible"></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="warehouse-management" class="tabs show-tab">
+      <div class="header">
+        <ul>
+          <li>
+            <a href="#" class="management-tabs-page" pointTo="create-product">CADASTRAR PRODUTO</a>
+          </li>
+          <li>
+            <a href="#" class="management-tabs-page management-tab-active" pointTo="products">PRODUTOS</a>
+          </li>
+          <li>
+            <a href="#" class="management-tabs-page" pointTo="update-product">ATUALIZAR PRODUTO</a>
+          </li>
+          <li>
+            <a href="#" class="management-tabs-page" pointTo="delete-product">DELETAR PRODUTO</a>
+          </li>
+        </ul>
+      </div>
+      <div id="create-product" class="management-tabs">
+        <p>Create product page</p>
+      </div>
+      <div id="products" class="management-tabs show-tab">
+        <table width="100%" border="1" cellspacing="15">
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+            <th>Data de criação</th>
+            <th>Data da última modificação</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </div>
+      <div id="update-product" class="management-tabs">
+        <p>Update products page</p>
+      </div>
+      <div id="delete-product" class="management-tabs">
+        <p>Delete products page</p>
+      </div>
+    </div>
+    <div id="change-history" class="tabs">
+      <h1>Welcome to history changes page</h1>
+    </div>
+    <div id="instructions" class="tabs">
+      <h1>Welcome to instructions page</h1>
+    </div>
+   
+  </main>
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="api.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
