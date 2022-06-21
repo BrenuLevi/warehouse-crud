@@ -16,6 +16,8 @@
 /* ========================== DEFAULTS ============================ */
 body {
   font-family: var(--font-style);
+
+  background-color: whitesmoke;
 }
 
 a {
@@ -25,7 +27,7 @@ a {
 ul {
   display: flex;
   gap: 4rem;
-  
+
   height: 100%;
 }
 
@@ -33,6 +35,72 @@ li {
   list-style: none;
 
   font-family: var(--font-style);
+}
+
+label {
+  font: 800 1rem var(--font-style);
+}
+
+input {
+  height: 1.5rem;
+  width: 10rem;
+  border: 1px solid black;
+  padding: 0.25rem;
+}
+
+::placeholder {
+  font-weight: 800;
+  font-family: var(--font-style);
+}
+
+input:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0 0 3px var(--primary-color) !important;
+  -moz-box-shadow: 0 0 3px var(--primary-color) !important;
+  -webkit-box-shadow: 0 0 3px var(--primary-color) !important;
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
+select {
+  height: 1.5rem;
+  width: 10rem;
+
+  border: 1px solid black;
+  color: #727272;
+
+  font-family: var(--font-style);
+}
+
+select:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0 0 3px var(--primary-color) !important;
+  -moz-box-shadow: 0 0 3px var(--primary-color) !important;
+  -webkit-box-shadow: 0 0 3px var(--primary-color) !important;
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
+button {
+  width: 7rem;
+  height: 2rem;
+
+  border-radius: 4px;
+  border: 1px solid var(--primary-light-color);
+
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  font: bold 1rem var(--font-style);
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-light-color);
+}
+
+textarea {
+  resize: none;
 }
 
 /* ========================== LAYOUT ============================ */
@@ -56,6 +124,10 @@ li {
   width: 100%;
   height: 100%;
   margin: 0 1.5rem 0 1.5rem;
+}
+
+.invisible {
+  width: 0;
 }
 
 /* ========================== NAV ============================ */
@@ -144,7 +216,7 @@ div.show-tab {
   padding: 0.5rem 1rem;
 }
 
-.header a {  
+.header a {
   font-weight: bold;
   color: rgb(51, 51, 51);
 }
@@ -161,6 +233,11 @@ div.show-tab {
   color: var(--primary-color);
 }
 
+/* ========================== MAIN ============================ */
+#main {
+  width: 100vw;
+}
+
 /* ========================== WAREHOUSE-MANAGEMENT ============================ */
 .management-tabs {
   display: none !important;
@@ -171,6 +248,89 @@ div.show-tab {
   width: 100%;
   display: flex;
   justify-content: center;
+}
 
-  margin-top: 4rem;
+#products .filter {
+  width: 100%;
+
+  margin: 2rem 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.filter form {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter form button {
+  margin-left: 2rem;
+}
+
+.localization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loc_inputs input {
+  width: 4rem;
+}
+
+.sheet {
+  margin: 0 2rem;
+}
+
+.sheet table tr td {
+  text-align: center;
+}
+
+/* ================= CREATE PRODUCT TAB =================== */
+#create-product {
+  margin: 2rem 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-product .title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.create-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.create-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_loc_inputs input {
+  width: 4rem;
 }

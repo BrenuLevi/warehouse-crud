@@ -5,7 +5,7 @@ const { createContext } = require("vm");
 
 module.exports = {
   async create(req, res) {
-    const { name, type, qtd, description } = req.body;
+    const { name, type, qtd, description, vality, localization } = req.body;
 
     const id = new Date().getTime().toString().slice(5);
 
@@ -15,6 +15,8 @@ module.exports = {
       type,
       qtd,
       description,
+      vality,
+      localization,
       created_at: new Date().toLocaleString(),
       last_edit: new Date().toLocaleString()
     }
@@ -52,10 +54,3 @@ module.exports = {
     })
   }
 }
-
-// ID
-// NOME
-// TIPO
-// QUANTIDADE
-// DATA DE ENTRADA
-// DATA DA ULTIMA MODIFICAÇÃO

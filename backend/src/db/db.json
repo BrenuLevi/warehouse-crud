@@ -1,5 +1,19 @@
 {
   "products": [
-    
-  ]
+    {
+      "id": "13415848",
+      "name": "Pastas",
+      "type": "Escritório",
+      "qtd": "200",
+      "description": "Pastas simples",
+      "vality": "no vality",
+      "localization": "10/22",
+      "created_at": "21/06/2022 09:10:15",
+      "last_edit": "21/06/2022 09:10:15"
+    }
+  ],
+  "credentials": {
+    "user": "almoxarifado",
+    "password": "12345sap"
+  }
 }
