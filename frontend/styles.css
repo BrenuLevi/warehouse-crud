@@ -130,6 +130,11 @@ textarea {
   width: 0;
 }
 
+.separator {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+}
+
 /* ========================== NAV ============================ */
 #header {
   width: 100%;
@@ -195,7 +200,7 @@ nav {
 }
 
 div.show-tab {
-  display: block !important;
+  display: flex !important;
 }
 
 .header {
@@ -240,6 +245,10 @@ div.show-tab {
 }
 
 /* ========================== WAREHOUSE-MANAGEMENT ============================ */
+#warehouse-management {
+  flex-direction: column;
+}
+
 .management-tabs {
   display: none !important;
 }
@@ -296,6 +305,10 @@ div.show-tab {
 }
 
 /* ================= CREATE PRODUCT TAB =================== */
+#products {
+  flex-direction: column;
+}
+
 #create-product {
   margin: 2rem 0;
 
@@ -336,4 +349,38 @@ div.show-tab {
 }
 
 /* ================= UPDATE PRODUCT TAB =================== */
+#update-product {
+  width: 100%;
 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 2rem;
+
+  margin: 3rem 0;
+}
+
+.update-form form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.update-form form .update-middle {
+  display: flex;
+  gap: 2rem;
+}
+
+.update-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#update-product ::placeholder {
+  text-align: center;
+}

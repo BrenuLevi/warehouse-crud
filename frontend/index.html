@@ -172,12 +172,7 @@
                 <label for="update_type_input">Tipo</label>
                 <select id="update_type_input" class="type">
                   <option disabled selected hidden>Escolha um tipo: </option>
-                  <option value="update_type">Criar novo tipo (+)</option>
                 </select>
-              </div>
-              <div class="update-box update-type">
-                <label for="update_new_type_input">Nome do tipo</label>
-                <input type="text" id="update_new_type_input" placeholder="Nome do novo tipo">
               </div>
               <div class="update-box qtd">
                 <label for="update_qtd_input">Quantidade</label>
@@ -204,10 +199,39 @@
 
           </form>
         </div>
+
+        <div class="separator"></div>
+
+        <h1 class="title">Acrescentar ou diminuir quantidade de um item</h1>
+        <div class="update-form">
+          <form>
+            <div class="update-upper">
+              <div class="update-box id">
+                <label for="update_id_input">Código</label>
+                <input type="text" id="update_id_input" placeholder="Código do item">
+              </div>
+            </div>
+            <div class="update-box operation">
+              <label for="update_operation_input">Operação</label>
+              <select id="update_operation_input">
+                <option value="+">Acrescentar (+)</option>
+                <option value="-">Diminuir (-)</option>
+              </select>
+            </div>
+            <div class="update-box qtd">
+              <label for="update_qtd_input">Acréscimo ou decréscimo</label>
+              <input type="text" id="update_qtd_input" placeholder="Quantidade">
+            </div>
+        </div>
+
+        <button type="button" id="update_submit_button">Atualizar</button>
+
+        </form>
       </div>
-      <div id="delete-product" class="management-tabs">
-        <p>Delete products page</p>
-      </div>
+    </div>
+    <div id="delete-product" class="management-tabs">
+      <p>Delete products page</p>
+    </div>
     </div>
     <div id="patrimony-management" class="tabs">
       <h1>Welcome to patrimony management page</h1>
@@ -223,6 +247,10 @@
   <footer></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./scripts/createProd.js"></script>
+  <script src="./scripts/showProd.js"></script>
+  <script src="./scripts/updateProd.js"></script>
+  <script src="./scripts/deleteProd.js"></script>
   <script src="api.js"></script>
   <script src="script.js"></script>
 </body>
