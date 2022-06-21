@@ -47,3 +47,17 @@ function changeActiveContentMainTab(e) {
   }
   document.getElementById(e.target.getAttribute("pointTo")).classList.add("show-tab");
 }
+
+//==========================================================================//
+
+//
+let type_select = document.getElementById("create_type_input");
+let new_type_input = document.getElementsByClassName("new-type");
+
+type_select.addEventListener("change", (e) => {
+  if(type_select.value == "create_type") {
+    new_type_input[0].style.display = "flex";
+  } else {
+    new_type_input[0].style.display = "none";
+  }
+})

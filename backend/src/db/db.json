@@ -10,6 +10,28 @@
       "localization": "10/22",
       "created_at": "21/06/2022 09:10:15",
       "last_edit": "21/06/2022 09:10:15"
+    },
+    {
+      "id": "18813108",
+      "name": "Réguas",
+      "type": "Escritório",
+      "qtd": "200",
+      "description": "Réguas Simples",
+      "vality": "no vality",
+      "localization": "10/22",
+      "created_at": "21/06/2022 10:40:13",
+      "last_edit": "21/06/2022 10:40:13"
+    },
+    {
+      "id": "19362520",
+      "name": "Canetas",
+      "type": "Escritório",
+      "qtd": "10",
+      "description": "Réguas Simples",
+      "vality": "no vality",
+      "localization": "10/23",
+      "created_at": "21/06/2022 10:49:22",
+      "last_edit": "21/06/2022 10:49:22"
     }
   ],
   "credentials": {

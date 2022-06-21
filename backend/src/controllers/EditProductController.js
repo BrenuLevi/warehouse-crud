@@ -1,10 +1,10 @@
 const path = require("path");
 
-const { readFile, writeFile, write } = require("fs");
+const { readFile, writeFile } = require("fs");
 
 module.exports = {
   async edit(req, res) {
-    const { name, type, qtd, description} = req.body;
+    const { name, type, qtd, description, vality, localization} = req.body;
 
     await readFile(path.join(__dirname, "../", "db", "db.json"), (err, data) => {
       if (err) throw err;
@@ -24,6 +24,12 @@ module.exports = {
           }
           if(description !== undefined) {
             product.description = description;
+          }
+          if(vality !== undefined) {
+            product.vality = vality;
+          }
+          if(localization !== undefined) {
+            product.localization = localization;
           }
 
           product.last_edit = new Date().toLocaleString();

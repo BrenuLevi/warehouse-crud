@@ -214,6 +214,7 @@ div.show-tab {
 .header li {
   background-color: whitesmoke;
   padding: 0.5rem 1rem;
+  /* border-bottom: 1px solid var(--primary-light-color); */
 }
 
 .header a {
@@ -283,7 +284,7 @@ div.show-tab {
 }
 
 .loc_inputs input {
-  width: 4rem;
+  width: 6rem;
 }
 
 .sheet {
@@ -309,7 +310,7 @@ div.show-tab {
 
 #create-product .title {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 
 .create-form form {
@@ -323,14 +324,16 @@ div.show-tab {
 .create-box {
   display: flex;
   flex-direction: column;
-}
-
-.create-box {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.create_loc_inputs input {
-  width: 4rem;
+.new-type {
+  display: none;
 }
+
+.create_loc_inputs input {
+  width: 5rem;
+}
+
+/* ================= UPDATE PRODUCT TAB =================== */
+

@@ -3,7 +3,6 @@ async function firstApiCall() {
     let arr_types = [];
     response.data.products.forEach(product => {
       createTableData(product);
-
       createTypesArray(product, arr_types);
     })
     addOptionToTypes(arr_types);
@@ -14,7 +13,7 @@ async function firstApiCall() {
 function createTableData(product) {
   let info_arrays = ["id", "name", "type", "qtd", "description", "vality", "localization", "created_at", "last_edit"];
 
-  if(product["vality"] == "no vality") {
+  if (product["vality"] == "no vality") {
     product["vality"] = "Sem validade";
   }
 
@@ -29,10 +28,12 @@ function createTableData(product) {
   }
 
   let status = document.createElement("td");
-  if(product.qtd < 50) {
+  if (product.qtd < 50) {
     status.innerText = "Necessário repor";
+    status.style.backgroundColor = "red";
   } else {
     status.innerText = "Tudo correto";
+    status.style.backgroundColor = "lightgreen";
   }
 
   table_row.append(status);
@@ -41,23 +42,21 @@ function createTableData(product) {
 }
 
 function createTypesArray(product, arr) {
-  if(!arr.includes(product.type)) {
+  if (!arr.includes(product.type)) {
     arr.push(product.type);
   }
 }
 
 function addOptionToTypes(arr) {
   let types = document.getElementsByClassName("type");
-  console.log(types)
-  for(let i = 0; i < types.length; i++) {
-    for(let k = 0; k < arr.length; k++) {
+  for (let i = 0; i < types.length; i++) {
+    for (let k = 0; k < arr.length; k++) {
       let option_tag = document.createElement("option");
       option_tag.setAttribute("value", arr[k])
       option_tag.innerText = arr[k];
       types[i].appendChild(option_tag);
     }
   }
-  console.log(types);
 }
 
 document.onload = firstApiCall();
@@ -71,20 +70,20 @@ create_submit_button.addEventListener("click", async (e) => {
   e.preventDefault();
   let name_input = document.getElementById("create_name_input").value;
   let type_input = "";
-  if(document.getElementById("create_type_input").value == "create_type") {
+  if (document.getElementById("create_type_input").value == "create_type") {
     type_input = document.getElementById("create_new_type_input").value;
+    JSON.parse(localStorage.getItem("data")).forEach(product => {
+      if (type_input == product.type) {
+        canCreate.push(false);
+      }
+    })
   } else {
     type_input = document.getElementById("create_type_input").value;
   }
-  JSON.parse(localStorage.getItem("data")).forEach(product => {
-    if(type_input == product.type) {
-      canCreate.push(false);
-    }
-  })
   let qtd_input = document.getElementById("create_qtd_input").value;
   let desc_input = document.getElementById("create_desc_input").value;
   let vality_input = document.getElementById("create_vality_input").value;
-  if(!vality_input) {
+  if (!vality_input) {
     vality_input = "no vality";
   }
   let loc_input = document.getElementById("loc_sector").value + "/" + document.getElementById("loc_shelf").value;
@@ -98,7 +97,7 @@ create_submit_button.addEventListener("click", async (e) => {
     localization: loc_input
   };
 
-  if(!canCreate.includes(false)) {
+  if (!canCreate.includes(false)) {
     await axios.post("http://localhost:3333/create", infos, (result) => {
       console.log(result);
     })
