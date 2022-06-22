@@ -1,6 +1,4 @@
-
-
-  const create_submit_button = document.querySelector("#create_submit_button");
+const create_submit_button = document.querySelector("#create_submit_button");
 let canCreate = [];
 
 create_submit_button.addEventListener("click", async (e) => {

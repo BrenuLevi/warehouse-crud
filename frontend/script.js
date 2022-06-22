@@ -50,7 +50,7 @@ function changeActiveContentMainTab(e) {
 
 //==========================================================================//
 
-//Show or hide create new category of type
+//
 let type_select = document.getElementById("create_type_input");
 let new_type_input = document.getElementsByClassName("new-type");
 

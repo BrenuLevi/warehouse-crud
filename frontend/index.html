@@ -156,7 +156,7 @@
       <div id="update-product" class="management-tabs">
         <h1 class="title">Atualizar item existente</h1>
         <div class="update-form">
-          <form>
+          <form id="update_infos_form">
             <div class="update-upper">
               <div class="update-box id">
                 <label for="update_id_input">Código</label>
@@ -171,7 +171,7 @@
               <div class="update-box">
                 <label for="update_type_input">Tipo</label>
                 <select id="update_type_input" class="type">
-                  <option disabled selected hidden>Escolha um tipo: </option>
+                  <option disabled selected hidden value="">Escolha um tipo: </option>
                 </select>
               </div>
               <div class="update-box qtd">
@@ -195,7 +195,7 @@
               </div>
             </div>
 
-            <button type="button" id="update_submit_button">Atualizar</button>
+            <button type="button" id="update_infos_button">Atualizar</button>
 
           </form>
         </div>
@@ -224,7 +224,7 @@
             </div>
         </div>
 
-        <button type="button" id="update_submit_button">Atualizar</button>
+        <button type="button" id="update_increase_button">Atualizar</button>
 
         </form>
       </div>

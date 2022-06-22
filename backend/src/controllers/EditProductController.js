@@ -13,22 +13,22 @@ module.exports = {
 
       database.products.forEach(async product => {
         if(product.id == req.params.id) {
-          if(name !== undefined) {
+          if(name != "") {
             product.name = name;
           }
-          if(type !== undefined) {
+          if(type != "") {
             product.type = type;
           }
-          if(qtd !== undefined) {
+          if(qtd != "") {
             product.qtd = qtd;
           }
-          if(description !== undefined) {
+          if(description != "") {
             product.description = description;
           }
-          if(vality !== undefined) {
+          if(vality != "") {
             product.vality = vality;
           }
-          if(localization !== undefined) {
+          if(localization != "/") {
             product.localization = localization;
           }
 
