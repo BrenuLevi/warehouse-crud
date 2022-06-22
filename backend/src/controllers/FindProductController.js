@@ -33,12 +33,16 @@ module.exports = {
   },
 
   async findOne(req, res) {
-    readFile(path.join(__dirname, "../", "db", "db.json"), (err, data) => {
+    await readFile(path.join(__dirname, "../", "db", "db.json"), (err, data) => {
       if(err) throw err;
 
       const database = JSON.parse(data);
+      const { id } = req.params;
 
       database.products.forEach(product => {
+        if(product.id == id) {
+          res.status(200).json(product);
+        }
       })
     })
   }

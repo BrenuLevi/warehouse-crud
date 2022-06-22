@@ -1,37 +1,15 @@
 {
   "products": [
     {
-      "id": "19362520",
-      "name": "Canetas",
-      "type": "Escolar",
-      "qtd": "250",
-      "description": "Canetas bic",
-      "vality": "no vality",
-      "localization": "02/20",
-      "created_at": "21/06/2022 10:49:22",
-      "last_edit": "22/06/2022 08:48:02"
-    },
-    {
-      "id": "20545759",
-      "name": "Lápis",
-      "type": "Escolar",
-      "qtd": "70",
-      "description": "Lápis grafite",
-      "vality": "no vality",
-      "localization": "09/54",
-      "created_at": "21/06/2022 11:09:05",
-      "last_edit": "21/06/2022 11:09:05"
-    },
-    {
-      "id": "20861218",
-      "name": "Caderno",
-      "type": "Escolar",
+      "id": "08199076",
+      "name": "Celular",
+      "type": "Eletrônicos",
       "qtd": "10",
-      "description": "Caderno escolar capa dura",
+      "description": "Samsung Galaxy A11",
       "vality": "no vality",
-      "localization": "7/20",
-      "created_at": "21/06/2022 11:14:21",
-      "last_edit": "21/06/2022 11:14:21"
+      "localization": "10/10",
+      "created_at": "22/06/2022 11:29:59",
+      "last_edit": "22/06/2022 11:31:09"
     }
   ],
   "credentials": {

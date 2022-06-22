@@ -12,10 +12,14 @@ update_infos_button.addEventListener("click", async (e) => {
         qtd: inputs[3].value,
         description: inputs[4].value,
         vality: inputs[5].value,
-        loc: inputs[6].value + "/" + inputs[7].value
+        localization: inputs[6].value + "/" + inputs[7].value
     }
 
-    await axios.put(`http://localhost:3333/edit/${data.id}`, data, (result) => {
-        console.log(result)
-    })
+    if (inputs[0].value != "") {
+        await axios.put(`http://localhost:3333/edit/${data.id}`, data, (result) => {
+            console.log(result)
+        })
+    } else {
+        alert("Insira um código")
+    }
 })

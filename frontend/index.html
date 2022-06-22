@@ -102,10 +102,6 @@
       <div id="products" class="management-tabs show-tab">
         <div class="filter">
           <form action="">
-            <div class="filters id">
-              <label for="id_input">Código</label>
-              <input type="text" id="id_input" placeholder="Código do item">
-            </div>
             <div class="filters name">
               <label for="name_input">Nome</label>
               <input type="text" id="name_input" placeholder="Nome do item">
@@ -132,7 +128,7 @@
               </div>
             </div>
 
-            <button type="submit">Filtrar</button>
+            <button type="submit" id="filter_button">Filtrar</button>
 
           </form>
         </div>
@@ -160,7 +156,7 @@
             <div class="update-upper">
               <div class="update-box id">
                 <label for="update_id_input">Código</label>
-                <input type="text" id="update_id_input" placeholder="Código do item">
+                <input type="text" id="update_id_input" placeholder="Código do item" required>
               </div>
             </div>
             <div class="update-middle">
@@ -195,7 +191,7 @@
               </div>
             </div>
 
-            <button type="button" id="update_infos_button">Atualizar</button>
+            <button type="submit" id="update_infos_button">Atualizar</button>
 
           </form>
         </div>
@@ -258,7 +254,7 @@
               </div>
             </div>
 
-            <button type="button">Excluir</button>
+            <button type="button" id="delete_button">Excluir</button>
           </form>
         </div>
       </div>
@@ -282,7 +278,7 @@
   <script src="./scripts/updateProd.js"></script>
   <script src="./scripts/deleteProd.js"></script>
   <script src="api.js"></script>
-  <script src="script.js"></script>
+  <script src="design.js"></script>
 </body>
 
 </html>
