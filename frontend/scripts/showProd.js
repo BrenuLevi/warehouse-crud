@@ -1,6 +1,5 @@
 async function firstCall() {
   await axios.get("http://localhost:3333/list").then(result => {
-    console.log(result)
     if (result.status == 200) {
       let arr_types = [];
       localStorage.setItem("products", JSON.stringify(result.data.products))
@@ -54,7 +53,7 @@ function addOptionToTypes(arr) {
 
       option_tag.setAttribute("value", arr[k])
       option_tag.innerText = arr[k];
-      
+
       types[i].appendChild(option_tag);
     }
   }
@@ -62,20 +61,19 @@ function addOptionToTypes(arr) {
 
 document.onload = firstCall();
 
-//================================================================================//
-const filter_button = document.getElementById("filter_button");
+//==========================================================================//
 
-filter_button.addEventListener("click", (e) => {
-  e.preventDefault();
+// FILTER (TO DO)
+// let _filter_form = document.forms[1].elements
 
-  let inputs = document.forms[0].elements;
+// _filter_form[_filter_form.length - 1].addEventListener("click", e => {
+//   e.preventDefault()
 
-  let name = inputs[0].value;
-  let type = inputs[1].value;
-  let qtd = inputs[2].value;
-  let desc = inputs[3].value;
-  let vality = inputs[4].value;
-  let localization = inputs[5].value;
+//   let name = _filter_form[0].value
+//   let type = _filter_form[1].value
+//   let qtd = _filter_form[2].value
+//   let vality = _filter_form[3].value == "" ? "no vality" : _filter_form[3].value
+//   let localization = _filter_form[4].value + "/" + _filter_form[5].value
 
-
-})
+//   let filters_str = ["name", "type", "qtd", "vality", "localization"]
+//   let filters = [name, type, qtd, vality, localization]

@@ -109,7 +109,7 @@
             <div class="filters">
               <label for="type_input">Tipo</label>
               <select id="type_input" class="type">
-                <option disabled selected hidden>Escolha um tipo: </option>
+                <option disabled selected hidden value="">Escolha um tipo: </option>
               </select>
             </div>
             <div class="filters qtd">
@@ -231,7 +231,7 @@
             <div class="delete-upper">
               <div class="delete-box id">
                 <label for="delete_id_input">Código</label>
-                <input type="text" id="delete_id_input" placeholder="Código do item">
+                <input type="text" id="delete_id_input" placeholder="Código do item" oninput="delete_Filter()">
               </div>
             </div>
 
