@@ -2,14 +2,14 @@
   "products": [
     {
       "id": "08199076",
-      "name": "Celular",
+      "name": "SGA11",
       "type": "Eletrônicos",
-      "qtd": "10",
+      "qtd": 10,
       "description": "Samsung Galaxy A11",
       "vality": "no vality",
       "localization": "10/10",
       "created_at": "22/06/2022 11:29:59",
-      "last_edit": "22/06/2022 11:31:09"
+      "last_edit": "23/06/2022 09:10:06"
     }
   ],
   "credentials": {

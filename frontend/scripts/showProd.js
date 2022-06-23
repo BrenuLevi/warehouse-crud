@@ -1,12 +1,17 @@
-async function firstApiCall() {
-  await axios.get("http://localhost:3333/list").then(response => {
-    let arr_types = [];
-    response.data.products.forEach(product => {
-      createTableData(product, "#products table");
-      createTypesArray(product, arr_types);
-    })
-    addOptionToTypes(arr_types);
-    localStorage.setItem("data", JSON.stringify(response.data.products));
+async function firstCall() {
+  await axios.get("http://localhost:3333/list").then(result => {
+    console.log(result)
+    if (result.status == 200) {
+      let arr_types = [];
+      localStorage.setItem("products", JSON.stringify(result.data.products))
+      result.data.products.forEach(product => {
+        createTableData(product, "#products table");
+        if (!arr_types.includes(product.type)) {
+          arr_types.push(product.type);
+        }
+      })
+      addOptionToTypes(arr_types);
+    }
   })
 }
 
@@ -41,25 +46,21 @@ function createTableData(product, table_to_append) {
   table.append(table_row);
 }
 
-function createTypesArray(product, arr) {
-  if (!arr.includes(product.type)) {
-    arr.push(product.type);
-  }
-}
-
 function addOptionToTypes(arr) {
   let types = document.getElementsByClassName("type");
   for (let i = 0; i < types.length; i++) {
     for (let k = 0; k < arr.length; k++) {
       let option_tag = document.createElement("option");
+
       option_tag.setAttribute("value", arr[k])
       option_tag.innerText = arr[k];
+      
       types[i].appendChild(option_tag);
     }
   }
 }
 
-document.onload = firstApiCall();
+document.onload = firstCall();
 
 //================================================================================//
 const filter_button = document.getElementById("filter_button");
@@ -76,5 +77,5 @@ filter_button.addEventListener("click", (e) => {
   let vality = inputs[4].value;
   let localization = inputs[5].value;
 
-  let storage = JSON.parse(localStorage.getItem("data"));
+
 })

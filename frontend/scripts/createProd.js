@@ -1,42 +1,46 @@
-const create_submit_button = document.querySelector("#create_submit_button");
-let canCreate = [];
+const create_form = document.forms[0].elements
 
-create_submit_button.addEventListener("click", async (e) => {
-  e.preventDefault();
-  let name_input = document.getElementById("create_name_input").value;
-  let type_input = "";
-  if (document.getElementById("create_type_input").value == "create_type") {
-    type_input = document.getElementById("create_new_type_input").value;
-    JSON.parse(localStorage.getItem("data")).forEach(product => {
-      if (type_input == product.type) {
-        canCreate.push(false);
+async function createProduct(e) {
+  e.preventDefault()
+
+  let canCreate = []
+
+  let name = create_form[0].value
+  let type = create_form[1].value == "create_type" ? create_form[2].value : create_form[1].value
+  let qtd = create_form[3].value
+  let description = create_form[4].value
+  let vality = create_form[5].value == "" ? "no vality" : create_form[5].value
+  let localization = create_form[6].value + "/" + create_form[7].value
+
+  let _arr = [name, type, qtd, description, vality, localization]
+
+  _arr.forEach(item => {
+    if (item == "" || item == " " || item == "/"){
+      canCreate.push(false)
+    } else {
+      canCreate.push(true)
+    }
+  })
+
+  canCreate[4] = true
+
+  if(!canCreate.includes(false)) {
+    let _to_submit = {
+      name,
+      type,
+      qtd,
+      description,
+      vality,
+      localization
+    }
+
+    await axios.post("http://localhost:3333/create", _to_submit).then(result => {
+      if(result.status == 200) {
+        alert("Item criado!")
       }
     })
-  } else {
-    type_input = document.getElementById("create_type_input").value;
-  }
-  let qtd_input = document.getElementById("create_qtd_input").value;
-  let desc_input = document.getElementById("create_desc_input").value;
-  let vality_input = document.getElementById("create_vality_input").value;
-  if (!vality_input) {
-    vality_input = "no vality";
-  }
-  let loc_input = document.getElementById("loc_sector").value + "/" + document.getElementById("loc_shelf").value;
 
-  let infos = {
-    name: name_input,
-    type: type_input,
-    qtd: qtd_input,
-    description: desc_input,
-    vality: vality_input,
-    localization: loc_input
-  };
-
-  if (!canCreate.includes(false)) {
-    await axios.post("http://localhost:3333/create", infos, (result) => {
-      console.log(result);
-    })
   } else {
-    alert("Tipo já existe");
+    alert("Preencha os campos!")
   }
-})
+}
