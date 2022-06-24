@@ -19,258 +19,276 @@
 
 <body>
 
-  <header id="header">
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">SisGAL</a>
-        <div class="menu">
+  <div class="login">
+    <h1 class="title">SISGAL</h1>
+    <form onsubmit="login(event)">
+      <div class="login-input user">
+        <label for="user_input">Usuário</label>
+        <input type="text" id="user_input">
+      </div>
+      <div class="login-input pass">
+        <label for="pass_input">Senha</label>
+        <input type="password" id="pass_input">
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div class="content">
+    <header id="header">
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">SisGAL</a>
+          <div class="menu">
+            <ul>
+              <li><a href="#" class="link-tabs header-active" pointTo="warehouse-management">CONTROLE DE
+                  ALMOXARIFADO</a>
+              </li>
+              <li><a href="#" class="link-tabs" pointTo="patrimony-management">CONTROLE DE PATRIMÔNIO</a></li>
+              <li><a href="#" class="link-tabs" pointTo="change-history">HISTÓRICO DE ALTERAÇÕES</a></li>
+              <li><a href="#" class="link-tabs" pointTo="instructions">INSTRUÇÕES</a></li>
+            </ul>
+          </div>
+          <div class="invisible"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div id="warehouse-management" class="tabs show-tab">
+        <div class="header">
           <ul>
-            <li><a href="#" class="link-tabs header-active" pointTo="warehouse-management">CONTROLE DE ALMOXARIFADO</a>
+            <li>
+              <a href="#" class="management-tabs-page" pointTo="create-product">CADASTRAR PRODUTO</a>
             </li>
-            <li><a href="#" class="link-tabs" pointTo="patrimony-management">CONTROLE DE PATRIMÔNIO</a></li>
-            <li><a href="#" class="link-tabs" pointTo="change-history">HISTÓRICO DE ALTERAÇÕES</a></li>
-            <li><a href="#" class="link-tabs" pointTo="instructions">INSTRUÇÕES</a></li>
+            <li>
+              <a href="#" class="management-tabs-page management-tab-active" pointTo="products">PRODUTOS</a>
+            </li>
+            <li>
+              <a href="#" class="management-tabs-page" pointTo="update-product">ATUALIZAR PRODUTO</a>
+            </li>
+            <li>
+              <a href="#" class="management-tabs-page" pointTo="delete-product">DELETAR PRODUTO</a>
+            </li>
           </ul>
         </div>
-        <div class="invisible"></div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <div id="warehouse-management" class="tabs show-tab">
-      <div class="header">
-        <ul>
-          <li>
-            <a href="#" class="management-tabs-page" pointTo="create-product">CADASTRAR PRODUTO</a>
-          </li>
-          <li>
-            <a href="#" class="management-tabs-page management-tab-active" pointTo="products">PRODUTOS</a>
-          </li>
-          <li>
-            <a href="#" class="management-tabs-page" pointTo="update-product">ATUALIZAR PRODUTO</a>
-          </li>
-          <li>
-            <a href="#" class="management-tabs-page" pointTo="delete-product">DELETAR PRODUTO</a>
-          </li>
-        </ul>
-      </div>
-      <div id="create-product" class="management-tabs">
-        <h1 class="title">Cadastro de novo item</h1>
-        <div class="create-form">
-          <form onsubmit="createProduct(event)" novalidate>
-            <div class="create-box name">
-              <label for="create_name_input">Nome</label>
-              <input type="text" id="create_name_input" placeholder="Nome do item" required>
-            </div>
-            <div class="create-box create-type">
-              <label for="create_type_input">Tipo</label>
-              <select id="create_type_input" class="type" required>
-                <option disabled selected hidden value="">Escolha um tipo: </option>
-                <option value="create_type">Criar novo tipo (+)</option>
-              </select>
-            </div>
-            <div class="create-box new-type">
-              <label for="create_new_type_input">Nome do tipo</label>
-              <input type="text" id="create_new_type_input" placeholder="Nome do novo tipo" required>
-            </div>
-            <div class="create-box qtd">
-              <label for="create_qtd_input">Quantidade</label>
-              <input type="number" id="create_qtd_input" placeholder="Quantidade do item" required>
-            </div>
-            <div class="create-box description">
-              <label for="create_desc_input">Descrição do item</label>
-              <input type="text" id="create_desc_input" placeholder="Descrição do item" required>
-            </div>
-            <div class="create-box vality">
-              <label for="create_vality_input">Data de Validade</label>
-              <input type="date" id="create_vality_input" required>
-            </div>
-            <div class="create-box loc">
-              <label for="create_loc_inputs">Localização</label>
-              <div class="create_loc_inputs">
-                <input type="number" id="loc_sector" placeholder="Setor" required>
-                <input type="number" id="loc_shelf" placeholder="Prateleira" required>
+        <div id="create-product" class="management-tabs">
+          <h1 class="title">Cadastro de novo item</h1>
+          <div class="create-form">
+            <form onsubmit="createProduct(event)" novalidate>
+              <div class="create-box name">
+                <label for="create_name_input">Nome</label>
+                <input type="text" id="create_name_input" placeholder="Nome do item" required>
               </div>
-            </div>
+              <div class="create-box create-type">
+                <label for="create_type_input">Tipo</label>
+                <select id="create_type_input" class="type" required>
+                  <option disabled selected hidden value="">Escolha um tipo: </option>
+                  <option value="create_type">Criar novo tipo (+)</option>
+                </select>
+              </div>
+              <div class="create-box new-type">
+                <label for="create_new_type_input">Nome do tipo</label>
+                <input type="text" id="create_new_type_input" placeholder="Nome do novo tipo" required>
+              </div>
+              <div class="create-box qtd">
+                <label for="create_qtd_input">Quantidade</label>
+                <input type="number" id="create_qtd_input" placeholder="Quantidade do item" required>
+              </div>
+              <div class="create-box description">
+                <label for="create_desc_input">Descrição do item</label>
+                <input type="text" id="create_desc_input" placeholder="Descrição do item" required>
+              </div>
+              <div class="create-box vality">
+                <label for="create_vality_input">Data de Validade</label>
+                <input type="date" id="create_vality_input" required>
+              </div>
+              <div class="create-box loc">
+                <label for="create_loc_inputs">Localização</label>
+                <div class="create_loc_inputs">
+                  <input type="number" id="create-loc_sector" placeholder="Setor" required>
+                  <input type="number" id="create-loc_shelf" placeholder="Prateleira" required>
+                </div>
+              </div>
 
-            <button type="submit" id="create_submit_button">Cadastrar</button>
+              <button type="submit" id="create_submit_button">Cadastrar</button>
 
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-      <div id="products" class="management-tabs show-tab">
-        <div class="filter">
-          <form action="">
-            <div class="filters name">
-              <label for="name_input">Nome</label>
-              <input type="text" id="name_input" placeholder="Nome do item">
-            </div>
-            <div class="filters">
-              <label for="type_input">Tipo</label>
-              <select id="type_input" class="type">
-                <option disabled selected hidden value="">Escolha um tipo: </option>
-              </select>
-            </div>
-            <div class="filters qtd">
-              <label for="qtd_input">Quantidade</label>
-              <input type="text" id="qtd_input" placeholder="Quantidade do item">
-            </div>
-            <div class="filters vality">
-              <label for="vality_input">Data de Validade</label>
-              <input type="date" id="vality_input">
-            </div>
-            <div class="filters localization">
-              <label for="loc_inputs">Localização</label>
-              <div class="loc_inputs">
-                <input type="text" id="loc_sector" placeholder="Setor">
-                <input type="text" id="loc_shelf" placeholder="Prateleira">
+        <div id="products" class="management-tabs show-tab">
+          <div class="filter">
+            <form action="">
+              <div class="filters name">
+                <label for="name_input">Nome</label>
+                <input type="text" id="name_input" placeholder="Nome do item">
               </div>
-            </div>
-
-            <button type="submit" id="filter_button">Filtrar</button>
-
-          </form>
-        </div>
-        <div class="sheet">
-          <table width="100%" border="1" cellspacing="15">
-            <tr>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Quantidade</th>
-              <th>Descrição</th>
-              <th>Data de validade</th>
-              <th>Localização</th>
-              <th>Data de criação</th>
-              <th>Data da última modificação</th>
-              <th>Status</th>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div id="update-product" class="management-tabs">
-        <h1 class="title">Atualizar item existente</h1>
-        <div class="update-form">
-          <form id="update_infos_form">
-            <div class="update-upper">
-              <div class="update-box id">
-                <label for="update_id_input">Código</label>
-                <input type="text" id="update_id_input" placeholder="Código do item" required>
-              </div>
-            </div>
-            <div class="update-middle">
-              <div class="update-box name">
-                <label for="update_name_input">Nome</label>
-                <input type="text" id="update_name_input" placeholder="Nome do item">
-              </div>
-              <div class="update-box">
-                <label for="update_type_input">Tipo</label>
-                <select id="update_type_input" class="type">
+              <div class="filters">
+                <label for="type_input">Tipo</label>
+                <select id="type_input" class="type">
                   <option disabled selected hidden value="">Escolha um tipo: </option>
                 </select>
               </div>
-              <div class="update-box qtd">
-                <label for="update_qtd_input">Quantidade</label>
-                <input type="text" id="update_qtd_input" placeholder="Quantidade do item">
+              <div class="filters qtd">
+                <label for="qtd_input">Quantidade</label>
+                <input type="text" id="qtd_input" placeholder="Quantidade do item">
               </div>
-              <div class="update-box description">
-                <label for="update_desc_input">Descrição do item</label>
-                <input id="update_desc_input" placeholder="Descrição do item"></input>
+              <div class="filters vality">
+                <label for="vality_input">Data de Validade</label>
+                <input type="date" id="vality_input">
               </div>
-              <div class="update-box vality">
-                <label for="update_vality_input">Data de Validade</label>
-                <input type="date" id="update_vality_input">
-              </div>
-              <div class="update-box loc">
-                <label for="update_loc_inputs">Localização</label>
-                <div class="update_loc_inputs">
+              <div class="filters localization">
+                <label for="loc_inputs">Localização</label>
+                <div class="loc_inputs">
                   <input type="text" id="loc_sector" placeholder="Setor">
                   <input type="text" id="loc_shelf" placeholder="Prateleira">
                 </div>
               </div>
-            </div>
 
-            <button type="submit" id="update_infos_button">Atualizar</button>
+              <button type="submit" id="filter_button">Filtrar</button>
+
+            </form>
+          </div>
+          <div class="sheet">
+            <table width="100%" border="1" cellspacing="15">
+              <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+                <th>Descrição</th>
+                <th>Data de validade</th>
+                <th>Localização</th>
+                <th>Data de criação</th>
+                <th>Data da última modificação</th>
+                <th>Status</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="update-product" class="management-tabs">
+          <h1 class="title">Atualizar item existente</h1>
+          <div class="update-form">
+            <form id="update_infos_form">
+              <div class="update-upper">
+                <div class="update-box id">
+                  <label for="update_id_input">Código</label>
+                  <input type="text" id="update_id_input" placeholder="Código do item" required>
+                </div>
+              </div>
+              <div class="update-middle">
+                <div class="update-box name">
+                  <label for="update_name_input">Nome</label>
+                  <input type="text" id="update_name_input" placeholder="Nome do item">
+                </div>
+                <div class="update-box">
+                  <label for="update_type_input">Tipo</label>
+                  <select id="update_type_input" class="type">
+                    <option disabled selected hidden value="">Escolha um tipo: </option>
+                  </select>
+                </div>
+                <div class="update-box qtd">
+                  <label for="update_qtd_input">Quantidade</label>
+                  <input type="text" id="update_qtd_input" placeholder="Quantidade do item">
+                </div>
+                <div class="update-box description">
+                  <label for="update_desc_input">Descrição do item</label>
+                  <input id="update_desc_input" placeholder="Descrição do item"></input>
+                </div>
+                <div class="update-box vality">
+                  <label for="update_vality_input">Data de Validade</label>
+                  <input type="date" id="update_vality_input">
+                </div>
+                <div class="update-box loc">
+                  <label for="update_loc_inputs">Localização</label>
+                  <div class="update_loc_inputs">
+                    <input type="text" id="update-loc_sector" placeholder="Setor">
+                    <input type="text" id="update-loc_shelf" placeholder="Prateleira">
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" id="update_infos_button">Atualizar</button>
+
+            </form>
+          </div>
+
+          <div class="separator"></div>
+
+          <h1 class="title">Acrescentar ou diminuir quantidade de um item</h1>
+          <div class="update-form">
+            <form>
+              <div class="update-upper">
+                <div class="update-box id">
+                  <label for="add_id_input">Código</label>
+                  <input type="text" id="add_id_input" placeholder="Código do item">
+                </div>
+              </div>
+              <div class="update-box operation">
+                <label for="update_operation_input">Operação</label>
+                <select id="update_operation_input">
+                  <option value="+">Acrescentar (+)</option>
+                  <option value="-">Diminuir (-)</option>
+                </select>
+              </div>
+              <div class="update-box qtd">
+                <label for="add_qtd_input">Acréscimo ou decréscimo</label>
+                <input type="text" id="add_qtd_input" placeholder="Quantidade">
+              </div>
+          </div>
+
+          <button type="button" id="update_increase_button">Atualizar</button>
 
           </form>
         </div>
-
-        <div class="separator"></div>
-
-        <h1 class="title">Acrescentar ou diminuir quantidade de um item</h1>
-        <div class="update-form">
-          <form>
-            <div class="update-upper">
-              <div class="update-box id">
-                <label for="update_id_input">Código</label>
-                <input type="text" id="update_id_input" placeholder="Código do item">
+        <div id="delete-product" class="management-tabs">
+          <h1 class="title">Deletar item existente</h1>
+          <div class="delete-form">
+            <form>
+              <div class="delete-upper">
+                <div class="delete-box id">
+                  <label for="delete_id_input">Código</label>
+                  <input type="text" id="delete_id_input" placeholder="Código do item" oninput="delete_Filter()">
+                </div>
               </div>
-            </div>
-            <div class="update-box operation">
-              <label for="update_operation_input">Operação</label>
-              <select id="update_operation_input">
-                <option value="+">Acrescentar (+)</option>
-                <option value="-">Diminuir (-)</option>
-              </select>
-            </div>
-            <div class="update-box qtd">
-              <label for="update_qtd_input">Acréscimo ou decréscimo</label>
-              <input type="text" id="update_qtd_input" placeholder="Quantidade">
-            </div>
-        </div>
 
-        <button type="button" id="update_increase_button">Atualizar</button>
-
-        </form>
-      </div>
-      <div id="delete-product" class="management-tabs">
-        <h1 class="title">Deletar item existente</h1>
-        <div class="delete-form">
-          <form>
-            <div class="delete-upper">
-              <div class="delete-box id">
-                <label for="delete_id_input">Código</label>
-                <input type="text" id="delete_id_input" placeholder="Código do item" oninput="delete_Filter()">
+              <div class="delete-bottom">
+                <div class="sheet">
+                  <table width="100%" border="1" cellspacing="15">
+                    <tr>
+                      <th>Código</th>
+                      <th>Nome</th>
+                      <th>Tipo</th>
+                      <th>Quantidade</th>
+                      <th>Descrição</th>
+                      <th>Data de validade</th>
+                      <th>Localização</th>
+                      <th>Data de criação</th>
+                      <th>Data da última modificação</th>
+                      <th>Status</th>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
 
-            <div class="delete-bottom">
-              <div class="sheet">
-                <table width="100%" border="1" cellspacing="15">
-                  <tr>
-                    <th>Código</th>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                    <th>Quantidade</th>
-                    <th>Descrição</th>
-                    <th>Data de validade</th>
-                    <th>Localização</th>
-                    <th>Data de criação</th>
-                    <th>Data da última modificação</th>
-                    <th>Status</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-
-            <button type="button" id="delete_button">Excluir</button>
-          </form>
+              <button type="button" id="delete_button">Excluir</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="patrimony-management" class="tabs">
-      <h1>Welcome to patrimony management page</h1>
-    </div>
-    <div id="change-history" class="tabs">
-      <h1>Welcome to history changes page</h1>
-    </div>
-    <div id="instructions" class="tabs">
-      <h1>Welcome to instructions page</h1>
-    </div>
+      <div id="patrimony-management" class="tabs">
+        <h1>Welcome to patrimony management page</h1>
+      </div>
+      <div id="change-history" class="tabs">
+        <h1>Welcome to history changes page</h1>
+      </div>
+      <div id="instructions" class="tabs">
+        <h1>Welcome to instructions page</h1>
+      </div>
 
-  </main>
-  <footer></footer>
+    </main>
+    <footer></footer>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="design.js"></script>

@@ -1,4 +1,4 @@
-const create_form = document.forms[0].elements
+const create_form = document.forms[1].elements
 
 async function createProduct(e) {
   e.preventDefault()

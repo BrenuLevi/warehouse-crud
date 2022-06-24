@@ -1,4 +1,4 @@
-const _update_form = document.forms[2].elements
+const _update_form = document.forms[3].elements
 
 _update_form[_update_form.length - 1].addEventListener("click", async e => {
     e.preventDefault()

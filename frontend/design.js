@@ -1,3 +1,28 @@
+//Login
+let login_form = document.forms[0].elements
+let content = document.querySelector(".content")
+
+if (sessionStorage.getItem("credentials") != true && sessionStorage.getItem("credentials")) {
+  document.querySelector(".login").style.display = "none"
+  content.className += " show"
+}
+
+async function login(e) {
+  e.preventDefault()
+
+  let user = login_form[0].value
+  let pass = login_form[1].value
+
+  await axios.post("http://localhost:3333/login", { user, pass }).then(result => {
+    if (result.status == 200) {
+      document.querySelector(".login").style.display = "none"
+      content.className += " show"
+      sessionStorage.setItem("credentials", true)
+    }
+  })
+}
+
+
 //Change active main tab
 let main_tabs_link = document.getElementsByClassName('link-tabs')
 for (let i = 0; i < main_tabs_link.length; i++) {

@@ -21,6 +21,28 @@
       "localization": "10/23",
       "created_at": "23/06/2022 09:24:45",
       "last_edit": "23/06/2022 09:24:45"
+    },
+    {
+      "id": "68011058",
+      "name": "Canetas",
+      "type": "Escritório",
+      "qtd": 200,
+      "description": "Caneta Bic Azul",
+      "vality": "no vality",
+      "localization": "10/25",
+      "created_at": "24/06/2022 07:53:31",
+      "last_edit": "24/06/2022 07:53:31"
+    },
+    {
+      "id": "68099947",
+      "name": "Caderno",
+      "type": "Escolar",
+      "qtd": 45,
+      "description": "Caderno escolar capa dura",
+      "vality": "no vality",
+      "localization": "11/12",
+      "created_at": "24/06/2022 07:54:59",
+      "last_edit": "24/06/2022 07:54:59"
     }
   ],
   "credentials": {
